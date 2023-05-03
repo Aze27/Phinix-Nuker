@@ -1,0 +1,14 @@
+{
+  "setURL": "https://example.com",
+  "setState": "Playing",
+  "setName": "Example Game",
+  "setDetails": "Details about the game",
+  "setAssetsLargeImage": "https://media.discordapp.net/attachments/1064702481508090018/1081058743552331796/a_41d7b2a06d23c22c400f3351c3b4a15c.gif?width=160&height=160",
+  "setAssetsLargeText": "Large Image Text",
+  "setAssetsSmallImage": "https://cdn.discordapp.com/emojis/854141160623570987.gif?size=48",
+  "setAssetsSmallText": "Small Image Text",
+  "button1": "Button 1 Text",
+  "button2": "Button 2 Text",
+  "button1Link": "https://example.com",
+  "button2Link": "https://example.com"
+}

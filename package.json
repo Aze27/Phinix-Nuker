@@ -1,0 +1,24 @@
+{
+  "name": "phinix-nuker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aze27/Phinix-Nuker.git"
+  },
+  "author": "Aze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aze27/Phinix-Nuker/issues"
+  },
+  "homepage": "https://github.com/Aze27/Phinix-Nuker#readme",
+  "dependencies": {
+    "discord.js-selfbot-v13": "^2.13.6",
+    "gradient-string": "^2.0.2",
+    "readline-sync": "^1.4.10"
+  }
+}

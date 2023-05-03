@@ -1,3 +1,4 @@
 module.exports = {
-    token: "MTA0NTcyNTg4NzE2Mjc1NzI1MQ.GG82wO.juXtkBixFdzqGSicSBv7VrT9FbL_XWSgTvngds"
+    token: "" // add your token dummy
+    //devs : aze , rin , kaavay .. join us on dc discord.gg/heavenforever ;)
 }

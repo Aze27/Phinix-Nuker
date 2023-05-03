@@ -2,7 +2,7 @@ const discord = require('discord.js-selfbot-v13')
 const client = new discord.Client({checkUpdate: false})
 const fs = require('fs');
 const consolecolor = require('gradient-string')
-
+const request = require('requests');
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -60,9 +60,11 @@ ${sltconsole}
 [2] MassKick
 [3] Custom RPC
 [4] AFK Status
+[5] Stream Status
+[6] Watching Status
+[7] Listening Status
 
-
-[6] Exit
+[8] Exit
     `))
 
     const e = input.question(sltcv("[?] : "))
@@ -218,9 +220,49 @@ ${sltconsole}
 
     }
     else if(e==="5"){
+        const twitchLinkRegex = /^(https?:\/\/)?(www\.)?twitch\.tv\/[a-zA-Z0-9_]+$/;
+        const streamStatus = input.question(sltcv("[?] Stream Status ? : "))
+        const twitchLink = input.question(sltcv("[?] Stream link (Twitch) ? : "))
+        if (!twitchLinkRegex.test(twitchLink)) {
+            console.log(consolecolor("#FF0000", "#FF0000")("[!] Invalid Twitch link! Please provide a valid Twitch link."));
+            await sleep(2000);
+            main();
+          }
 
+          client.user.setActivity(streamStatus, {
+            type: 'STREAMING',
+            url: twitchLink,
+          });
+          console.log(consolecolor("#18F952", "#18F952")(`[+] Setting up Stream status Done.`));
+          await sleep(2000)
+          main()
+        
     }
-    else if (e === "6"){
+    else if(e==="6"){
+
+        const watchSt = input.question(sltcv("[?] Status ? : "))
+
+          client.user.setActivity(watchSt, {
+            type: 'WATCHING',
+          });
+          console.log(consolecolor("#18F952", "#18F952")(`[+] Setting up watching status Done.`));
+          await sleep(2000)
+          main()
+        
+    }
+    else if(e==="7"){
+
+        const watchSt = input.question(sltcv("[?] Status ? : "))
+
+          client.user.setActivity(watchSt, {
+            type: 'LISTENING',
+          });
+          console.log(consolecolor("#18F952", "#18F952")(`[+] Setting up listening status Done.`));
+          await sleep(2000)
+          main()
+        
+    }
+    else if (e === "8"){
         process.exit(1)
     }
     else{

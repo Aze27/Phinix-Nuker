@@ -53,24 +53,18 @@ async function main() {
 
 
 ${sltconsole}
-
-
-
-[1] MassBan
-[2] MassKick
-[3] Custom RPC
-[4] AFK Status
-[5] Stream Status
-[6] Watching Status
-[7] Listening Status
-
-[8] Exit
+[1] Custom RPC          [6] Mass Ban             
+[2] AFK Status          [7] Mass Kick
+[3] Stream Status       [8] Mass ID Spammer
+[4] Watching Status     
+[5] Listening Status    
+[9] Exit
     `))
 
     const e = input.question(sltcv("[?] : "))
     cccv = Math.floor((Math.random() * theme.length));
     sltcv = theme[cccv]
-    if (e === "1"){
+    if (e === "6"){
         const guildid = input.question(sltcv("[?] Target guild ID ? : "))
 
         const guild = client.guilds.cache.get(guildid)
@@ -92,7 +86,9 @@ ${sltconsole}
             })
         })
     }
-    else if (e==="2"){
+
+    //mass kick
+    else if (e==="7"){
         const guildid = input.question(sltcv("[?] Target guild ID ? : "))
 
         const guild = client.guilds.cache.get(guildid)
@@ -114,7 +110,7 @@ ${sltconsole}
             })
         })
     }
-    else if (e==="3"){
+    else if (e==="1"){
         let rpc = {};
         let defaultRPC  = {
             setURL: 'https://example.com',
@@ -210,7 +206,7 @@ ${sltconsole}
           main()
 
     }
-    else if(e==="4"){
+    else if(e==="2"){
         afkStatus = input.question(sltcv("[?] Your AFK Message ? : "))
         console.log(consolecolor("#18F952", "#18F952")(`
 [+] Your afk status has been set to : ${afkStatus}.
@@ -219,7 +215,7 @@ ${sltconsole}
         Afk = true
 
     }
-    else if(e==="5"){
+    else if(e==="3"){
         const twitchLinkRegex = /^(https?:\/\/)?(www\.)?twitch\.tv\/[a-zA-Z0-9_]+$/;
         const streamStatus = input.question(sltcv("[?] Stream Status ? : "))
         const twitchLink = input.question(sltcv("[?] Stream link (Twitch) ? : "))
@@ -238,7 +234,7 @@ ${sltconsole}
           main()
         
     }
-    else if(e==="6"){
+    else if(e==="4"){
 
         const watchSt = input.question(sltcv("[?] Status ? : "))
 
@@ -250,7 +246,7 @@ ${sltconsole}
           main()
         
     }
-    else if(e==="7"){
+    else if(e==="5"){
 
         const watchSt = input.question(sltcv("[?] Status ? : "))
 
@@ -262,7 +258,7 @@ ${sltconsole}
           main()
         
     }
-    else if (e === "8"){
+    else if (e === "9"){
         process.exit(1)
     }
     else{
